@@ -99,10 +99,6 @@
 <body>
     <div class="container">
         <h1 id="pageTitle"><a href="https://ravelloh.github.io/EverydayNews">EverydayNews</a></h1>
-        <div class="search-bar" id="searchBar">
-            <input type="text" id="searchInput" class="search-input" placeholder="搜索...">
-            <button class="search-button" onclick="doSearch()">搜索</button>
-        </div>
         <div id="loading" class="loading">加载中...</div>
         <div id="progressIndicator" style="margin-top: 10px; color: #666;"></div>
         <div id="defaultContent">
@@ -196,16 +192,6 @@
 
                 progressEl.textContent = '';
                 return matched;
-            }
-
-            async function doSearch() {
-                const query = document.getElementById('searchInput').value.trim();
-                if (!query) {
-                    showAlert('请输入搜索关键词');
-                    return;
-                }
-                const matched = await search(query.split(''));
-                displaySearchResults(matched.map(src => [src, null]));
             }
 
             async function fetchNews(url) {
@@ -338,22 +324,6 @@
                 }
             });
 
-            function displaySearchResults(results) {
-                const newsList = document.getElementById('newsList');
-                newsList.innerHTML = '';
-                if (results.length === 0) {
-                    showAlert('未找到相关结果');
-                    return;
-                }
-                results.forEach(([src]) => {
-                    const li = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.href = `?date=${src.replace(/\//g, '')}`;
-                    link.textContent = `新闻日期: ${src.replace(/\//g, '-')}`;
-                    li.appendChild(link);
-                    newsList.appendChild(li);
-                });
-            }
         </script>
         <footer>
             <hr>
