@@ -109,7 +109,6 @@
             <label for="dateInput">选择日期:</label>
             <input type="date" id="dateInput" min="2022-06-04" onchange="fetchNewsByDate()">
         </div>
-        <button id="shareButton" class="share-button" onclick="shareNews()">分享当前链接</button>
         <div id="errorMessage" class="error"></div>
         <div id="customAlert" class="custom-alert">
             <p id="alertMessage"></p>
@@ -326,44 +325,9 @@
 
         </script>
         <footer>
-            <hr>
-            <p>
-            <details>
-                <summary>设置</summary>
-                <p>支持的参数:</p>
-                <ul>
-                    <li>date: 日期, 格式为YYYYMMDD</li>
-                    <li>style: 风格, 可选值为clean</li>
-                    <li>footer: 页脚, none为隐藏</li>
-                    <li>backgroundColor: 背景色, 任意有效的CSS颜色值(例如111111)</li>
-                    <li>textColor: 文字颜色, 任意有效的CSS颜色值(例如ffffff)</li>
-                </ul>
-                例如:
-                <ul>
-                    <li><a href="?style=clean">?style=clean(简化模式)</a></li>
-                    <li><a href="?footer=none">?footer=none(隐藏页脚)</a></li>
-                    <li><a href="?style=clean&footer=none">?style=clean&footer=none(仅显示新闻)</a></li>
-                    <li><a href="?date=20220604">?date=20220604(指定日期)</a></li>
-                    <li><a
-                            href="?date=20220604&backgroundColor=111111&textColor=ffffff">?backgroundColor=111111&textColor=ffffff(暗色主题)</a>
-                    </li>
-                </ul>
-
-
-                <hr>
-                推荐将本站使用iframe挂载到你的网站上: <br>
-                <code>&lt;iframe src="https://ravelloh.github.io/EverydayNews?style=clean" width="600" height="800" frameborder="0"&gt;&lt;/iframe&gt;</code>
-                <br>
-                <code>&lt;iframe src="https://ravelloh.github.io/EverydayNews?style=clean&backgroundColor=111111&textColor=ffffff" width="600" height="800" frameborder="0"&gt;&lt;/iframe&gt;</code>
-
-            </details>
-            </p>
-
             <p><a href="https://github.com/RavelloH/EverydayNews" target="_blank"
                     rel="noopener">Github:RavelloH/EverydayNews</a></p>
         </footer>
-        <script defer src="https://analytics.ravelloh.top/script.js"
-            data-website-id="eb3f393e-35af-49bf-ae7d-79a72477cca7"></script>
     </div>
 </body>
 
